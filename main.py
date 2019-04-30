@@ -11,7 +11,7 @@ Computes the model score
 Expects a list of strings
 """
 def getModelScore(lOfStrings):
-    return statistics.mean([ len(i) for i in lOfStrings])
+    return statistics.median([ len(i) for i in lOfStrings])
     
 
 def main():
