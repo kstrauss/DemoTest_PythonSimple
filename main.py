@@ -1,7 +1,7 @@
 """
 A stub for the main entry point into our processing model
 """
-
+import statistics
 def getInputs():
     # we should probably pull the data from databases
     return ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
@@ -11,8 +11,8 @@ Computes the model score
 Expects a list of strings
 """
 def getModelScore(lOfStrings):
-    d =  sum(len(i) for i in lOfStrings)
-    return d/len(lOfStrings) # return mean    
+    return statistics.mean([ len(i) for i in lOfStrings])
+    
 
 def main():
     print("hello my big world")
