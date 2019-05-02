@@ -8,3 +8,14 @@ A test repo to demonstrate git, developing python for actuaries with the code th
 We will use this as a starting point for doing changes.
 
 The example is trivial, but it is such to just demonstrate.
+
+To build and run:
+
+```
+git clone https://github.voya.net/i719184/DemoTest_A
+cd DemoTest_A
+docker build . -t pythonActuary:latest
+
+# assuming it worked
+docker run pythonActuary:latest
+```
