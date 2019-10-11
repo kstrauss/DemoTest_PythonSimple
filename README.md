@@ -27,3 +27,6 @@ buildDock.ps1
 (docker inspect pythonactuary:latest | convertFrom-json).ContainerConfig.labels
 docker run pythonactuary:latest
 ```
+
+## Azure Pipeline note
+if you use the azure pipeline docker task it adds many more (and probably better) set of of metadata for labels. see https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/build/docker?view=azure-devops for details
