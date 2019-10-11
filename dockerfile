@@ -20,11 +20,26 @@ FROM base
 copy --from=builder /install /usr/local
 RUN mkdir /app/
 
+# install the code
 copy *.py /app/
 
 WORKDIR /app/
+# run all tests that are validate code & environment
 RUN pytest
 
+# arguments around what version this was
+# sourced from
+ARG GIT_COMMIT=notset
+ARG GIT_BRANCH=noset
+ARG GIT_DIRTY=undefined
+ARG BUILD_CREATOR=notset
+
+# add the label metadata so what
+# build information is available
+LABEL branch=$GIT_BRANCH \
+    commit=$GIT_COMMIT \
+    dirty=$GIT_DIRTY \
+    build-creator=$BUILD_CREATOR
 
 # create a simple python script
 #RUN echo print("Hello World from python from a container!") > c:\hello.py
