@@ -14,8 +14,16 @@ To build and run:
 ```
 git clone https://github.voya.net/i719184/DemoTest_A
 cd DemoTest_A
-docker build . -t pythonActuary:latest
+docker build . -t pythonactuary:latest
 
 # assuming it worked
-docker run pythonActuary:latest
+docker run pythonactuary:latest
+```
+
+Of course to do the more complete (adds meta data) run in powershell
+
+```
+buildDock.ps1
+(docker inspect pythonactuary:latest | convertFrom-json).ContainerConfig.labels
+docker run pythonactuary:latest
 ```
